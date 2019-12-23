@@ -219,16 +219,28 @@ $("#submit").on(click, function() {
 
         }
 
-
     }
 
 
+    $.post("/api/friends", newFriend, function(data) {
+        $("#yourname").val("");
+        $("#yourpicture").val("");
+        $("#resultModal").modal("toggle");
 
 
-})
+    }).done(function(res, err) {
+        if (err) throw err;
+        
+
+
+    })
+
+
+
+});
 
 
 
 
 
-})
+});
