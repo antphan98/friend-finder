@@ -136,8 +136,6 @@
             <option>5 (Strongly Agree)</option>
         </select>
 
-        <button type="button" class="btn btn-danger" id="submit">Submit Survey</button>
-
     
 </div>
 <footer>
@@ -148,9 +146,10 @@
         </div>
     </footer>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
-          </button>
+    <button type="button" class="btn btn-primary" id="submit" data-toggle="modal" data-target="#exampleModal">
+        Submit Survey
+
+    </button>
           
           <!-- Modal -->
           <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModal" aria-hidden="true">
@@ -230,10 +229,8 @@ $("#submit").on(click, function() {
 
     }).done(function(res, err) {
         if (err) throw err;
-        
 
-
-    })
+    });
 
 
 
