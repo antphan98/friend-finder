@@ -48,7 +48,7 @@
 
         <h3>Question 2</h3>
         <h6>When it comes to money, you find yourself spending a lot more than you should be.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q2">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -58,7 +58,7 @@
 
         <h3>Question 3</h3>
         <h6>You find it hard to confront people about difficult topics.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q3">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -68,7 +68,7 @@
 
         <h3>Question 4</h3>
         <h6>You consider yourself to be patient.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q4">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -78,7 +78,7 @@
 
         <h3>Question 5</h3>
         <h6>Dogs are better than cats.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q5">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -88,7 +88,7 @@
 
         <h3>Question 6</h3>
         <h6>It's easy to make you angry.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q6">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -98,7 +98,7 @@
 
         <h3>Question 7</h3>
         <h6>You are lazy and do the bare minumum.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q7">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -108,7 +108,7 @@
 
         <h3>Question 8</h3>
         <h6>You push yourself out of your comfort zone.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q8">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -118,7 +118,7 @@
 
         <h3>Question 9</h3>
         <h6>You think about food often.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q9">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -128,7 +128,7 @@
 
         <h3>Question 10</h3>
         <h6>You dread having class projects or presentations.</h6>
-        <select class="form-control" id="q1">
+        <select class="form-control" id="q10">
             <option>1 (Strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -136,7 +136,7 @@
             <option>5 (Strongly Agree)</option>
         </select>
 
-        <button type="button" class="btn btn-danger">Submit Survey</button>
+        <button type="button" class="btn btn-danger" id="submit">Submit Survey</button>
 
     
 </div>
@@ -178,3 +178,57 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+$("#submit").on(click, function() {
+
+    function submitForm() {
+
+        const validate = true;
+        $(".form-control").each(function() {
+            if ($(this.val() === "")) {
+
+                validate = false;
+            }
+            return validate;
+
+        });
+
+        if (submitForm() === true) {
+
+            const newFriend = {
+            name: $("#yourname").val().trim(),
+            picture: $("yourpicture").val().trim(),
+            scores: [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val(),
+            ]
+
+            }
+
+        }
+
+
+    }
+
+
+
+
+})
+
+
+
+
+
+})
